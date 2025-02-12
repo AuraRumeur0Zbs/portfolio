@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.typekit.net/xxu0cqn.css">
+<meta charset="utf-8">
+<title>main</title>
+<link href="Sanstitre-2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<script src="main.js"></script>
+	<div>
+		<a href="index.html">		
+			<img src="signature.png" id="titlemain">
+		</a>
+	</div>
+	<div id="videodiv"></div>
+	
+	
+	<script>
+        function addCode() {
+			//Génére la vidéo
+			var nombre = Math.floor(Math.random() * 4);
+            document.getElementById("videodiv")
+                .innerHTML =
+				`<video id="video-carrousel" autoplay muted src="`+ nombre + `.mp4" type="video/mp4"> video not supported </video>`;
+			// Check si la video est fini
+			document.getElementById('video-carrousel').addEventListener('ended',myHandler,false)
+        }
+		// Attend que la page load
+		document.addEventListener("DOMContentLoaded", function() {
+  		addCode();
+		});
+		// Recursive
+		function myHandler() {
+			addCode()
+		};
+    </script>
+	
+	
+	<footer>
+		<div id="para">
+			<a href="gallery.html" class="element">Gallery</a>
+			<a href="about.html" class="element">About</a>
+			<a href="socials.html" class="element">Socials</a>
+		</div>
+	</footer>
+
+</body>
+</html>
